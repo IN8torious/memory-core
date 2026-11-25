@@ -67,6 +67,24 @@ A closing calibration, because precision matters more than romance: a pendulum i
 
 But the instinct that reaches for pendulums is sound, one organ over. Every computer already has an oscillator for a heart — a vibrating crystal, literally called the *clock* — and a powered machine with a stopped clock is not resting; it is dead. Power is blood. Oscillation is heartbeat. Systems should be designed the way organisms are: a rhythm everything else obeys, flows instead of stocks, loops instead of lines.
 
+## 8. Three levels of token independence
+
+Precision matters here: this model does not abolish tokens. A conventional language model still reads and writes tokens; that is its interface. What can end is **token-dependence as the unit of memory**. The claim comes in three levels, and they should never be blurred together:
+
+- **Level 1 — token-efficient memory.** The memory retrieves a small, relevant projection instead of replaying the whole history. Plausible, measurable, and already demonstrated in the field: published memory layers report order-of-magnitude token savings over full-context replay. Not revolutionary by itself.
+- **Level 2 — token-independent persistent cognition.** The persistent state is no longer principally a transcript. It is objects, relations, provenance, local time, dependencies, contradictions, epistemic mass, state transitions. The complete memory never becomes a prompt; only a projection of the currently relevant region does. Tokens are an *interface representation* at the boundary between the memory system and the model — not the memory's storage format. This is the level the working system behind this repository operates at today.
+- **Level 3 — token-independent model.** A reasoning engine that operates directly over the persistent state — activate a region, propagate constraints, update state, resolve — with language as pure input/output rather than cognition's substrate. This level is a research program, not a result. Nothing shipped works this way yet, and this paper does not claim otherwise.
+
+## 9. The decoupling test
+
+The falsifiable form of the whole position:
+
+> **As accumulated history grows without bound, can the tokenized context required to answer correctly remain approximately bounded — with accuracy held?**
+
+Plot context required against memory size. The conventional architecture's line climbs with the archive. The claim here is that a well-structured memory's line stays roughly flat — from kilobytes of history to megabytes and beyond — for the same class of questions, without accuracy collapsing. If it holds, something foundational has been demonstrated, short of abolishing tokens: **persistent memory capacity and token context consumption can be decoupled.**
+
+One sharpening, learned from running the Level 2 system: bounded is not sufficient. The projection must stay *findable* — a small context drawn from the wrong region of a vast memory fails silently and confidently. As the space grows, the binding constraint becomes whether the right neighbourhood rises to the query. That is what epistemic mass and provenance are for (see [ancestry and local time](../doctrine/ancestry-and-local-time.md)): mass is findability, stated in the model's own physics. The decoupling curve and the drift curve are two axes of the same experiment, and both are being measured.
+
 ---
 
-*Status: PROPOSED — a position, not a result. Its working prototype is the memory system this repository is the public core of. Fork the pattern, run it, and bring back receipts.*
+*Status: PROPOSED — a position, not a result. Its working prototype is the memory system this repository is the public core of; its drift and decoupling tests are specified in the doctrine and being run. Fork the pattern, run it, and bring back receipts.*
